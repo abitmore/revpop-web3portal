@@ -143,9 +143,6 @@ const CreateWorker = Loadable({
 
 import LoginSelector from "./components/LoginSelector";
 import Login from "./components/Login/Login";
-import RegistrationSelector from "./components/Registration/RegistrationSelector";
-import WalletRegistration from "./components/Registration/WalletRegistration";
-import AccountRegistration from "./components/Registration/AccountRegistration";
 import {CreateWalletFromBrainkey} from "./components/Wallet/WalletCreate";
 import ShowcaseGrid from "./components/Showcases/ShowcaseGrid";
 import PriceAlertNotifications from "./components/PriceAlertNotifications";
@@ -433,21 +430,6 @@ class App extends React.Component {
                                     component={LoginSelector}
                                 />
                                 <Route path="/login" component={Login} />
-                                <Route
-                                    path="/registration"
-                                    exact
-                                    component={RegistrationSelector}
-                                />
-                                <Route
-                                    path="/registration/local"
-                                    exact
-                                    component={WalletRegistration}
-                                />
-                                <Route
-                                    path="/registration/cloud"
-                                    exact
-                                    component={AccountRegistration}
-                                />
                                 <Route path="/news" exact component={News} />
                                 <Redirect
                                     path={"/voting"}
