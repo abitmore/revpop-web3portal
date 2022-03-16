@@ -142,7 +142,6 @@ const CreateWorker = Loadable({
 });
 
 import LoginSelector from "./components/LoginSelector";
-import Login from "./components/Login/Login";
 import {CreateWalletFromBrainkey} from "./components/Wallet/WalletCreate";
 import ShowcaseGrid from "./components/Showcases/ShowcaseGrid";
 import PriceAlertNotifications from "./components/PriceAlertNotifications";
@@ -429,7 +428,6 @@ class App extends React.Component {
                                     path="/create-account"
                                     component={LoginSelector}
                                 />
-                                <Route path="/login" component={Login} />
                                 <Route path="/news" exact component={News} />
                                 <Redirect
                                     path={"/voting"}
