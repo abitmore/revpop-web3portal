@@ -109,22 +109,6 @@ const DashboardAccountsOnly = Loadable({
     loading: LoadingIndicator
 });
 
-const DashboardPage = Loadable({
-    loader: () =>
-        import(
-            /* webpackChunkName: "dashboard" */ "./components/Dashboard/DashboardPage"
-        ),
-    loading: LoadingIndicator
-});
-
-const WalletManager = Loadable({
-    loader: () =>
-        import(
-            /* webpackChunkName: "wallet" */ "./components/Wallet/WalletManager"
-        ),
-    loading: LoadingIndicator
-});
-
 const ExistingAccount = Loadable({
     loader: () =>
         import(
@@ -361,7 +345,7 @@ class App extends React.Component {
 
     render() {
         let {incognito, incognitoWarningDismissed} = this.state;
-        let {walletMode, theme, location, match, ...others} = this.props;
+        let {walletMode, theme, ...others} = this.props;
         let content = null;
 
         if (this.state.syncFail) {
@@ -488,11 +472,6 @@ class App extends React.Component {
                                     component={ShowcaseGrid}
                                 />
 
-                                {/* Wallet backup/restore routes */}
-                                <Route
-                                    path="/wallet"
-                                    component={WalletManager}
-                                />
                                 <Route
                                     path="/create-wallet-brainkey"
                                     component={CreateWalletFromBrainkey}
